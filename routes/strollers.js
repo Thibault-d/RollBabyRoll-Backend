@@ -14,13 +14,21 @@ router.get("/", function (req, res, next) {
 });
 
 router.post("/", (req, res, next) => {
-  const { name, brand, weight, storage, handle } = req.body;
+  const { name, brand, weight, storage, handle, dimensions,maxweight,brakes,image,reversible,birth,sport,double} = req.body;
   Stroller.create({
     name,
-    brand,
-    weight,
-    storage,
-    handle,
+      brand,
+      weight,
+      storage,
+      handle,
+      dimensions,
+      maxweight,
+      brakes,
+      image,
+      reversible,
+      birth,
+      sport,
+      double,
   })
     .then((added) => {
       console.log(added);

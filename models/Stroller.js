@@ -12,7 +12,9 @@ const strollerSchema = new Schema({
   brakes: { type: String },
   image: { type: String },
   reversible: { type: String },
-  bassinet: { type: String },
+  birth: { type: String },
+  sport: {type: String},
+  double: {type: String} 
 });
 
 const Stroller = mongoose.model("Stroller", strollerSchema);
