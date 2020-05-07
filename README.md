@@ -18,22 +18,16 @@ I wanted to create a RESTful API to get experience in making Front and Back end 
 
 ## User Stories
 
-**View All** - As a user I want to land on the page containing the listing of all Strollers existing in the DB
+Stroller API:
+- Add Stroller to DB
+- Read Stroller from DB
+- Remove Stroller from DB
+- Update Stroller from DB
 
-**Add stroller** - As an Admin user, I want to access a form allowing to add a Stroller in the DB
-
-**Remove stroller** - As an Admin user, I want to be able to remove a Stroller from the DB if the product isn't sold anymore
-
-**Update stroller** - As an admin user, I want to be able to udpate any parameter of any existing Stroller
-
-**404** - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault
-
-**500** - As a user I want to see a nice error page when the super team screws it up so that I know that is not my fault
 
 ## Backlog
 
-List of other features outside of the MVPs scope
-
+Authentication
 - Signup
 - Login
 - Logout
