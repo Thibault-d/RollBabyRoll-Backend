@@ -54,7 +54,7 @@ https://trello.com/b/5TnPaoZI/roll-baby-roll
 
 The url to your repository and to your deployed project
 
-[Repository Link](https://github.com/Thibault-d/RollBabyRoll-End/)
+[Repository Link](https://github.com/Thibault-d/RollBabyRoll-Back/)
 
 [Deploy Link](http://heroku.com/)
 
