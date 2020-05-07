@@ -46,21 +46,21 @@ List of other features outside of the MVPs scope
 | :----: | ------------------------ | -------------------------- | ---- |
 |  GET   | `/strollers`             | return all strollers in DB |      |
 |  POST  | `/strollers`             | add new stroller to DB     |      |
-|  GET   | `/strollers/update/:id`  | update a selected stroller |      |
-|  GET   | `/strollers/deleted/:id` | delete a selected stroller |      |
+|  POST   | `/strollers/update/:id`  | update a selected stroller |      |
+|  POST   | `/strollers/deleted/:id` | delete a selected stroller |      |
 
 
 ## Links
 
 ### Trello
 
-Link to Trello
+https://trello.com/b/5TnPaoZI/roll-baby-roll
 
 ### Git
 
 The url to your repository and to your deployed project
 
-[Repository Link](http://github.com/)
+[Repository Link](https://github.com/Thibault-d/RollBabyRoll-End/)
 
 [Deploy Link](http://heroku.com/)
 
