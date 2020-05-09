@@ -13,6 +13,19 @@ router.get("/", function (req, res, next) {
     });
 });
 
+router.post("/update", function (req, res, next) {
+  console.log(req.body._id);
+  Stroller.findByIdAndUpdate(
+    { _id: req.body._id }, 
+    { name: req.body.name })
+    .then((updated) => {
+      console.log(updated);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 router.post("/", (req, res, next) => {
   const {
     name,

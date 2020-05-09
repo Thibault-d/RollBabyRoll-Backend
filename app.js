@@ -16,7 +16,6 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const strollerRouter = require("./routes/strollers");
 
-
 const app = express();
 
 //Solving the favicon 404 error
