@@ -1,3 +1,4 @@
+require('dotenv').config()
 const createError = require("http-errors");
 const express = require("express");
 const favicon = require('serve-favicon');
@@ -7,7 +8,8 @@ const logger = require("morgan");
 var cors = require("cors");
 
 const mongoose = require("mongoose");
-const localDB = "mongodb://localhost:27017/mydb";
+const localDB = process.env.LOCAL_DB_URL;
+const liveDB = process.env.LIVE_DB_URL;
 
 //Routes
 const indexRouter = require("./routes/index");
@@ -22,13 +24,13 @@ app.use(favicon(path.join(__dirname, 'public/images', 'favicon.ico')))
 
 // MongoDB conncetion
 mongoose
-  .connect(localDB, {
+  .connect(liveDB, {
     useCreateIndex: true,
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
   })
   .then(() => {
-    console.log('connected to', localDB );
+    console.log('connected to', liveDB);
   })
   .catch((err) => {
     console.log(err)
