@@ -7,6 +7,8 @@ const strollerSchema = new Schema({
   weight: { type: Number },
   storage: { type: Number },
   handle: { type: String },
+  allterrain: { type: String},
+  airline: {type: String},
   dimensionsfolded: { type: String },
   dimensionsopen: { type: String },
   maxweight: { type: Number },
