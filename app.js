@@ -7,11 +7,25 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 var cors = require("cors");
 
+
 const mongoose = require("mongoose");
 const localDB = process.env.LOCAL_DB_URL;
 const liveDB = process.env.LIVE_DB_URL;
 
+const whitelist = ['https://roll-baby-roll.web.app/']
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+
+
 //Routes
+app.use(cors(corsOptions));
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const strollerRouter = require("./routes/strollers");
