@@ -1,31 +1,22 @@
-require('dotenv').config()
+require("dotenv").config();
 const createError = require("http-errors");
 const express = require("express");
-const favicon = require('serve-favicon');
-const path = require('path')
+const favicon = require("serve-favicon");
+const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 var cors = require("cors");
 
-
 const mongoose = require("mongoose");
 const liveDB = process.env.LIVE_DB_URL;
 
-
-let whitelist = ['https://roll-baby-roll.web.app/']
-let corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
-}
-
-
 //Routes
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    credentials: true,
+    origin: [process.env.PUBLIC_DOMAIN],
+  })
+);
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const strollerRouter = require("./routes/strollers");
@@ -33,20 +24,20 @@ const strollerRouter = require("./routes/strollers");
 const app = express();
 
 //Solving the favicon 404 error
-app.use(favicon(path.join(__dirname, 'public/images', 'favicon.ico')))
+app.use(favicon(path.join(__dirname, "public/images", "favicon.ico")));
 
 // MongoDB conncetion
 mongoose
   .connect(liveDB, {
     useCreateIndex: true,
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
   })
   .then(() => {
-    console.log('connected to', liveDB);
+    console.log("connected to", liveDB);
   })
   .catch((err) => {
-    console.log(err)
+    console.log(err);
   });
 
 // view engine setup
