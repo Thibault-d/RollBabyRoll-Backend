@@ -11,9 +11,9 @@ var cors = require("cors");
 const mongoose = require("mongoose");
 const liveDB = process.env.LIVE_DB_URL;
 
-/*
-const whitelist = ['https://roll-baby-roll.web.app/']
-const corsOptions = {
+
+let whitelist = ['https://roll-baby-roll.web.app/']
+let corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
       callback(null, true)
@@ -25,7 +25,7 @@ const corsOptions = {
 
 
 //Routes
-app.use(cors(corsOptions));*/
+app.use(cors(corsOptions));
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const strollerRouter = require("./routes/strollers");
