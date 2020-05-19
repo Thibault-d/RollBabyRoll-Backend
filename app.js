@@ -5,11 +5,10 @@ const favicon = require("serve-favicon");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
-var cors = require("cors");
+const cors = require("cors");
 
 const mongoose = require("mongoose");
 const liveDB = process.env.LIVE_DB_URL;
-
 const app = express();
 
 //Routes
@@ -19,6 +18,7 @@ app.use(
     origin: [process.env.PUBLIC_DOMAIN],
   })
 );
+
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const strollerRouter = require("./routes/strollers");
