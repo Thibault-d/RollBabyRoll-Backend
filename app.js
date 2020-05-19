@@ -9,9 +9,9 @@ var cors = require("cors");
 
 
 const mongoose = require("mongoose");
-const localDB = process.env.LOCAL_DB_URL;
 const liveDB = process.env.LIVE_DB_URL;
 
+/*
 const whitelist = ['https://roll-baby-roll.web.app/']
 const corsOptions = {
   origin: function (origin, callback) {
@@ -25,7 +25,7 @@ const corsOptions = {
 
 
 //Routes
-app.use(cors(corsOptions));
+app.use(cors(corsOptions));*/
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const strollerRouter = require("./routes/strollers");
