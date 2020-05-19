@@ -10,6 +10,8 @@ var cors = require("cors");
 const mongoose = require("mongoose");
 const liveDB = process.env.LIVE_DB_URL;
 
+const app = express();
+
 //Routes
 app.use(
   cors({
@@ -21,7 +23,7 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const strollerRouter = require("./routes/strollers");
 
-const app = express();
+
 
 //Solving the favicon 404 error
 app.use(favicon(path.join(__dirname, "public/images", "favicon.ico")));
