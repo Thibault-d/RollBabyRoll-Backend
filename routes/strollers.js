@@ -12,6 +12,16 @@ router.get("/", function (req, res, next) {
     });
 });
 
+router.get("/detail", function (req, res, next) {
+  Stroller.findOne(req.id)
+    .then((strollers) => {
+      res.status(200).json(strollers);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 router.post("/update", function (req, res, next) {
   console.log(req.body._id);
   Stroller.findByIdAndUpdate(
