@@ -9,8 +9,8 @@ start with `npm start`
 
 ## Description
 
-Chosing the best stroller for your baby shouldn't require a PhD.
-Roll Baby Roll is the best Stroller comparator, so you can quickly see and compare what matters for you.
+The Backend of this application is a REST API created to have an interface with Mongo DB. 
+
 
 ## Motivation
 
@@ -19,16 +19,16 @@ I wanted to create a RESTful API to get experience in making Front and Back end 
 ## User Stories
 
 Stroller API:
+
 - Add Stroller to DB
 - Read Stroller from DB
-- Remove Stroller from DB
 - Update Stroller from DB
-
 
 ## Backlog
 
+- Remove Stroller from DB
+
 Authentication
-- Signup
 - Login
 - Logout
 
@@ -38,13 +38,14 @@ Authentication
 
 | Method | Path                     | description                | Body |
 | :----: | ------------------------ | -------------------------- | ---- |
-|  GET   | `/strollers`             | return all strollers in DB |      |
-|  POST  | `/strollers`             | add new stroller to DB     |      |
-|  POST   | `/strollers/update/:id`  | update a selected stroller |      |
-|  POST   | `/strollers/deleted/:id` | delete a selected stroller |      |
-
+|  GET   | `/`             | return all strollers in DB |      |
+|  POST  | `/`             | add new stroller to DB     |      |
+|  POST  | `/strollers/detail/:id`  | update a selected stroller |      |
+|  POST  | `/strollers/update/:id` | delete a selected stroller |      |
 
 ## Links
+
+https://rollbabyroll.herokuapp.com/
 
 ### Trello
 
