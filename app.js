@@ -15,7 +15,7 @@ const app = express();
 app.use(
   cors({
     credentials: true,
-    origin: [process.env.PUBLIC_DOMAIN, process.env.LOCAL_HOST],
+    origin: ["https://roll-baby-roll.web.app/", "http://localhost:3001/"],
   })
 );
 

@@ -35,13 +35,47 @@ router.delete("/delete/:id", (req, res, next) => {
 });
 
 router.post("/update", (req, res, next) => {
-  const {  name,    brand,   weight,   storage,    handle,    allterrain,    airline,    dimensionsfolded,    dimensionsopen,    maxweight,    brakes,    image,    reversible,    birth,    sport,    double,    pricerange,    suspensions } = req.body;
+  const {
+    name,
+    brand,
+    weight,
+    storage,
+    handle,
+    allterrain,
+    airline,
+    dimensionsfolded,
+    dimensionsopen,
+    maxweight,
+    brakes,
+    image,
+    reversible,
+    birth,
+    sport,
+    double,
+    pricerange,
+    suspensions,
+  } = req.body;
 
   Stroller.findByIdAndUpdate(
     { _id: req.body._id },
     {
       $set: {
-        name: name, brand: brand, weight: weight, storage: storage, handle: handle, allterrain: allterrain,airline: dimensionsfolded, dimensionsopen: dimensionsopen, maxweight: maxweight,  brakes: brakes,   reversible: reversible,  birth: birth,  sport: sport,  double: double,  pricerange: pricerange, suspensions: suspensions,
+        name: name,
+        brand: brand,
+        weight: weight,
+        storage: storage,
+        handle: handle,
+        allterrain: allterrain,
+        airline: dimensionsfolded,
+        dimensionsopen: dimensionsopen,
+        maxweight: maxweight,
+        brakes: brakes,
+        reversible: reversible,
+        birth: birth,
+        sport: sport,
+        double: double,
+        pricerange: pricerange,
+        suspensions: suspensions,
       },
     }
   )
