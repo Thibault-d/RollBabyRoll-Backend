@@ -26,8 +26,8 @@ router.get("/detail/:id", (req, res, next) => {
 router.delete("/delete/:id", (req, res, next) => {
   let { id } = req.params;
   Stroller.findByIdAndDelete(id)
-    .then(() => {
-      res.status(200);
+    .then((strollers) => {
+      res.status(200).json(strollers);
     })
     .catch((err) => {
       console.log(err);
@@ -79,8 +79,8 @@ router.post("/update", (req, res, next) => {
       },
     }
   )
-    .then(() => {
-      res.status(200);
+    .then((strollers) => {
+      res.status(200).json(strollers);
     })
     .catch((err) => {
       console.log(err);
@@ -129,7 +129,7 @@ router.post("/", (req, res, next) => {
     suspensions,
   })
     .then((added) => {
-      res.status(200);
+      res.status(200).json(added);
     })
     .catch(next);
 });
