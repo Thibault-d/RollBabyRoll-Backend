@@ -2,15 +2,6 @@ var express = require("express");
 const Stroller = require("../models/Stroller.js");
 var router = express.Router();
 
-const app = express();
-
-
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://roll-baby-roll.web.app/"); 
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
 router.get("/", (req, res, next) => {
   Stroller.find()
     .then((strollers) => {
