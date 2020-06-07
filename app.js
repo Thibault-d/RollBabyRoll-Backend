@@ -11,6 +11,13 @@ const mongoose = require("mongoose");
 const liveDB = process.env.LIVE_DB_URL;
 const app = express();
 
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://roll-baby-roll.web.app/"); 
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 //Routes
 app.use(
   cors({

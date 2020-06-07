@@ -2,6 +2,8 @@ var express = require("express");
 const Stroller = require("../models/Stroller.js");
 var router = express.Router();
 
+
+
 router.get("/", (req, res, next) => {
   Stroller.find()
     .then((strollers) => {
