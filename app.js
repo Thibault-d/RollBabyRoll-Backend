@@ -36,7 +36,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("connected to", liveDB);
+    console.log("connected to DB");
   })
   .catch((err) => {
     console.log(err);
